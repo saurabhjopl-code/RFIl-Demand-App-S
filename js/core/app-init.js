@@ -1,13 +1,12 @@
 /* =========================================================
    APP INITIALIZATION
-   Purpose: Wire data loading → calculations → console output
-   Status: CORE – DO NOT BREAK
    ========================================================= */
 
 import { loadSaleDays } from "../data/load-sale-days.js";
 import { loadSales } from "../data/load-sales.js";
 import { loadStock } from "../data/load-stock.js";
 import { loadProduction } from "../data/load-production.js";
+import { loadStyleStatus } from "../data/load-style-status.js";
 
 import { calculateDRR } from "../calculations/drr.js";
 import { calculateSC } from "../calculations/sc.js";
@@ -29,7 +28,10 @@ const URLS = {
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9UMGb9GMFpOrcTTV1yeN4VLudTFeVy97_09T7-SIyvXDsMFypBgqyZWVQitbJi0I5IenBb0skv9UQ/pub?gid=46718869&single=true&output=csv",
 
   production:
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9UMGb9GMFpOrcTTV1yeN4VLudTFeVy97_09T7-SIyvXDsMFypBgqyZWVQitbJi0I5IenBb0skv9UQ/pub?gid=1281323624&single=true&output=csv"
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9UMGb9GMFpOrcTTV1yeN4VLudTFeVy97_09T7-SIyvXDsMFypBgqyZWVQitbJi0I5IenBb0skv9UQ/pub?gid=1281323624&single=true&output=csv",
+
+  styleStatus:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9UMGb9GMFpOrcTTV1yeN4VLudTFeVy97_09T7-SIyvXDsMFypBgqyZWVQitbJi0I5IenBb0skv9UQ/pub?gid=9418502&single=true&output=csv"
 };
 
 /* ================= BOOT ================= */
@@ -42,6 +44,7 @@ async function bootApp() {
     await loadSales(URLS.sales);
     await loadStock(URLS.stock);
     await loadProduction(URLS.production);
+    await loadStyleStatus(URLS.styleStatus);
 
     console.log("✅ All data loaded", AppState.rawData);
 
@@ -58,7 +61,5 @@ async function bootApp() {
     console.error("❌ App boot failed", err);
   }
 }
-
-/* ================= START ================= */
 
 document.addEventListener("DOMContentLoaded", bootApp);

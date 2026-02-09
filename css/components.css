@@ -1,0 +1,165 @@
+/* =========================================================
+   COMPONENT STYLES
+   Purpose: Buttons, inputs, cards, tabs, tables
+   Status: LOCKED – Never modify after this
+   ========================================================= */
+
+
+/* ================= BUTTONS ================= */
+
+button {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+button:disabled {
+  background-color: var(--color-gray-300);
+  color: var(--color-gray-500);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* ================= FILTER INPUTS ================= */
+
+label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+select,
+input[type="text"] {
+  height: 36px;
+  padding: 0 var(--space-sm);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+}
+
+select:focus,
+input[type="text"]:focus {
+  border-color: var(--color-accent);
+}
+
+
+/* ================= SUMMARY CARDS ================= */
+
+.summary-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.summary-title {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.summary-value {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+
+/* ================= TABS ================= */
+
+#report-tabs .tab {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#report-tabs .tab:hover {
+  color: var(--color-text-primary);
+}
+
+#report-tabs .tab.active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  border-bottom-color: var(--color-primary);
+}
+
+
+/* ================= TABLE BASE ================= */
+
+table {
+  width: 100%;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+thead {
+  background-color: var(--color-gray-100);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-table-header);
+}
+
+th,
+td {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--color-border-light);
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+tbody tr:hover {
+  background-color: var(--color-bg-hover);
+}
+
+td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ================= REPORT ROW TYPES ================= */
+
+tr.style-row {
+  background-color: var(--color-gray-50);
+  font-weight: var(--font-weight-semibold);
+}
+
+tr.sku-row td {
+  padding-left: var(--space-xl);
+}
+
+
+/* ================= EMPTY STATE ================= */
+
+.empty-state {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}

@@ -53,7 +53,6 @@ body {
   color: var(--color-text-primary);
 }
 
-
 /* ================= PROGRESS BAR ================= */
 
 #progress-section {
@@ -88,12 +87,11 @@ body {
   transition: width 0.3s ease;
 }
 
-
 /* ================= FILTER BAR ================= */
 
 #filter-bar {
   position: sticky;
-  top: 56px; /* header height */
+  top: 56px;
   z-index: var(--z-filter);
 
   display: flex;
@@ -112,9 +110,8 @@ body {
 }
 
 .filter-search {
-  flex: 1;
+  flex: 0 0 260px; /* controlled, professional width */
 }
-
 
 /* ================= SUMMARY GRID ================= */
 
@@ -122,10 +119,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
-
   padding: var(--space-lg);
 }
-
 
 /* ================= REPORT TABS ================= */
 
@@ -138,7 +133,6 @@ body {
   border-bottom: 1px solid var(--color-border-light);
 }
 
-
 /* ================= REPORT AREA ================= */
 
 #report-area {
@@ -146,11 +140,13 @@ body {
   min-height: 300px;
 }
 
-#report-placeholder {
-  padding: var(--space-xl);
-  text-align: center;
-  color: var(--color-text-muted);
-  background-color: var(--color-bg-card);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+/* ================= TABLE STICKY HEADER OFFSET ================= */
+
+/*
+Header (56px) + Filter (~64px) + Tabs (~40px)
+We give safe top offset so table header never hides.
+*/
+
+table thead {
+  top: 160px;
 }

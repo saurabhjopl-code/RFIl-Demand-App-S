@@ -1,29 +1,24 @@
 /* =========================================================
    GLOBAL APPLICATION STATE
-   Purpose: Single source of truth for data & calculations
-   Status: LOCKED – Additive only
    ========================================================= */
 
 const AppState = {
-  /* ================= RAW DATA ================= */
-
   rawData: {
     sales: [],
     stock: [],
     production: [],
     saleDays: [],
-    totalSaleDays: 0
-  },
+    totalSaleDays: 0,
 
-  /* ================= FILTERED DATA ================= */
+    /* ADDITIVE */
+    styleStatus: {}
+  },
 
   filteredData: {
     sales: [],
     stock: [],
     production: []
   },
-
-  /* ================= CALCULATIONS ================= */
 
   calculations: {
     drrBySku: {},
@@ -34,8 +29,6 @@ const AppState = {
     bucketBySku: {},
     priorityByStyle: {}
   },
-
-  /* ================= FILTER STATE ================= */
 
   filters: {
     category: ["ALL"],

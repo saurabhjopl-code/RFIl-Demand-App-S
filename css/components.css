@@ -159,3 +159,34 @@ tr.sku-row td {
   text-align: center;
   color: var(--color-text-muted);
 }
+
+/* ================= FILTER INPUTS ================= */
+
+select,
+input[type="text"] {
+  height: 32px;
+  padding: 0 var(--space-sm);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+}
+
+select[multiple] {
+  height: 64px;
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
+  overflow-y: auto;
+}
+
+/* ================= RESET BUTTON ================= */
+
+#filter-reset-btn {
+  background-color: var(--color-gray-200);
+  color: var(--color-text-primary);
+}
+
+#filter-reset-btn:hover {
+  background-color: var(--color-gray-300);
+}

@@ -156,3 +156,27 @@ body {
 table thead {
   top: 160px;
 }
+
+/* ================= FILTER BAR ================= */
+
+#filter-bar {
+  position: sticky;
+  top: 56px;
+  z-index: var(--z-filter);
+
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-end;
+
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.filter-search {
+  flex: 0 0 260px;
+}
+
+.filter-reset {
+  flex: 0 0 auto;
+}

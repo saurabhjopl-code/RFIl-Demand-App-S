@@ -171,3 +171,25 @@ tr.sku-row td {
   text-align: center;
   color: var(--color-text-muted);
 }
+
+/* =========================================================
+   ADDITIVE SUPPORT — CHECKBOX MULTI-SELECT ITEMS
+   (Safe: does not affect existing select inputs)
+   ========================================================= */
+
+.multi-select-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.multi-select-option:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.multi-select-option input[type="checkbox"] {
+  cursor: pointer;
+}

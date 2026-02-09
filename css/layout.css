@@ -44,13 +44,25 @@ body {
 
 .app-logo {
   height: 32px;
-  width: auto;
+}
+
+.app-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
 }
 
 .app-title {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+}
+
+.app-subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
 }
 
 /* ================= PROGRESS BAR ================= */
@@ -110,7 +122,7 @@ body {
 }
 
 .filter-search {
-  flex: 0 0 260px; /* controlled, professional width */
+  flex: 0 0 260px;
 }
 
 /* ================= SUMMARY GRID ================= */
@@ -127,7 +139,6 @@ body {
 #report-tabs {
   display: flex;
   gap: var(--space-sm);
-
   padding: 0 var(--space-lg);
   margin-top: var(--space-md);
   border-bottom: 1px solid var(--color-border-light);
@@ -140,12 +151,7 @@ body {
   min-height: 300px;
 }
 
-/* ================= TABLE STICKY HEADER OFFSET ================= */
-
-/*
-Header (56px) + Filter (~64px) + Tabs (~40px)
-We give safe top offset so table header never hides.
-*/
+/* ================= TABLE STICKY OFFSET ================= */
 
 table thead {
   top: 160px;

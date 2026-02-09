@@ -161,3 +161,29 @@ table thead {
   top: 160px;
   z-index: var(--z-table-header);
 }
+
+/* =========================================================
+   ADDITIVE SUPPORT — CUSTOM MULTI-SELECT DROPDOWN
+   (Does NOT affect existing UI unless used explicitly)
+   ========================================================= */
+
+.multi-select-container {
+  position: relative;
+  min-width: 220px;
+}
+
+.multi-select-panel {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+
+  z-index: var(--z-dropdown);
+}

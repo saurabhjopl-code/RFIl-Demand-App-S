@@ -5,7 +5,6 @@
   <title>Demand–Supply Planning Engine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/variables.css" />
   <link rel="stylesheet" href="./css/layout.css" />
@@ -14,10 +13,10 @@
 
 <body>
 
-  <!-- ================= HEADER (STICKY) ================= -->
+  <!-- ================= HEADER ================= -->
   <header id="app-header">
     <div class="header-left">
-      <img src="./assets/logo.png" alt="Logo" class="app-logo" />
+      <img src="./assets/logo.png" class="app-logo" />
     </div>
 
     <div class="header-center">
@@ -28,35 +27,34 @@
     </div>
 
     <div class="header-right">
-      <button id="export-btn" disabled>
-        ⬇ Export
-      </button>
+      <button id="export-btn" disabled>⬇ Export</button>
     </div>
   </header>
 
-  <!-- ================= PROGRESS BAR ================= -->
+  <!-- ================= PROGRESS ================= -->
   <section id="progress-section">
     <div class="progress-meta">
       <span id="progress-text">Initializing…</span>
       <span id="progress-percent">0%</span>
     </div>
     <div class="progress-bar">
-      <div id="progress-fill" style="width:0%"></div>
+      <div id="progress-fill"></div>
     </div>
   </section>
 
   <!-- ================= FILTER BAR ================= -->
   <section id="filter-bar">
+
     <div class="filter-item">
       <label>Category</label>
-      <select id="filter-category">
+      <select id="filter-category" multiple>
         <option value="ALL">All Categories</option>
       </select>
     </div>
 
     <div class="filter-item">
       <label>Company Remark</label>
-      <select id="filter-remark">
+      <select id="filter-remark" multiple>
         <option value="ALL">All Company Remarks</option>
       </select>
     </div>
@@ -66,64 +64,47 @@
       <input
         type="text"
         id="filter-search"
-        placeholder="Search Style ID or SKU"
+        placeholder="Search Style ID or SKU (overrides filters)"
       />
     </div>
+
+    <div class="filter-item filter-reset">
+      <label>&nbsp;</label>
+      <button id="filter-reset-btn">Reset</button>
+    </div>
+
   </section>
 
-  <!-- ================= SUMMARY GRID ================= -->
+  <!-- ================= SUMMARY ================= -->
   <section id="summary-grid">
-    <div class="summary-card" id="summary-1">
-      <div class="summary-title">Summary 1</div>
-      <div class="summary-value">–</div>
-    </div>
-    <div class="summary-card" id="summary-2">
-      <div class="summary-title">Summary 2</div>
-      <div class="summary-value">–</div>
-    </div>
-    <div class="summary-card" id="summary-3">
-      <div class="summary-title">Summary 3</div>
-      <div class="summary-value">–</div>
-    </div>
-    <div class="summary-card" id="summary-4">
-      <div class="summary-title">Summary 4</div>
-      <div class="summary-value">–</div>
-    </div>
-    <div class="summary-card" id="summary-5">
-      <div class="summary-title">Summary 5</div>
-      <div class="summary-value">–</div>
-    </div>
-    <div class="summary-card" id="summary-6">
-      <div class="summary-title">Summary 6</div>
-      <div class="summary-value">–</div>
-    </div>
+    <div class="summary-card"><div class="summary-title">Summary 1</div><div class="summary-value">–</div></div>
+    <div class="summary-card"><div class="summary-title">Summary 2</div><div class="summary-value">–</div></div>
+    <div class="summary-card"><div class="summary-title">Summary 3</div><div class="summary-value">–</div></div>
+    <div class="summary-card"><div class="summary-title">Summary 4</div><div class="summary-value">–</div></div>
+    <div class="summary-card"><div class="summary-title">Summary 5</div><div class="summary-value">–</div></div>
+    <div class="summary-card"><div class="summary-title">Summary 6</div><div class="summary-value">–</div></div>
   </section>
 
-  <!-- ================= REPORT TABS ================= -->
+  <!-- ================= TABS ================= -->
   <section id="report-tabs">
-    <button class="tab active" data-report="demand">Demand</button>
-    <button class="tab" data-report="overstock">Overstock</button>
-    <button class="tab" data-report="size-curve">Size Curve</button>
-    <button class="tab" data-report="broken-size">Broken Size</button>
-    <button class="tab" data-report="hero-styles">Hero Styles</button>
-    <button class="tab" data-report="production-only">Production Only</button>
-    <button class="tab" data-report="demand-weight">Demand Weight (DW)</button>
+    <button class="tab active">Demand</button>
+    <button class="tab">Overstock</button>
+    <button class="tab">Size Curve</button>
+    <button class="tab">Broken Size</button>
+    <button class="tab">Hero Styles</button>
+    <button class="tab">Production Only</button>
+    <button class="tab">Demand Weight (DW)</button>
   </section>
 
-  <!-- ================= REPORT TABLE AREA ================= -->
+  <!-- ================= REPORT ================= -->
   <main id="report-area">
-    <div id="report-placeholder">
-      Select a report to view data.
-    </div>
+    <div id="report-placeholder">Select a report to view data.</div>
   </main>
 
-  <!-- UI JS -->
   <script src="./js/ui/header.js"></script>
   <script src="./js/ui/progress-bar.js"></script>
   <script src="./js/ui/tabs.js"></script>
   <script src="./js/ui/table-utils.js"></script>
-
-  <!-- App bootstrap -->
   <script src="./js/core/app-init.js"></script>
 
 </body>

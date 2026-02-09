@@ -4,7 +4,6 @@
    Status: LOCKED – Never modify after this
    ========================================================= */
 
-
 /* ================= BUTTONS ================= */
 
 button {
@@ -30,7 +29,6 @@ button:disabled {
   box-shadow: none;
 }
 
-
 /* ================= FILTER INPUTS ================= */
 
 label {
@@ -40,7 +38,7 @@ label {
 
 select,
 input[type="text"] {
-  height: 36px;
+  height: 32px; /* reduced */
   padding: 0 var(--space-sm);
   font-size: var(--font-size-sm);
   background-color: var(--color-white);
@@ -49,11 +47,14 @@ input[type="text"] {
   color: var(--color-text-primary);
 }
 
+input[type="text"] {
+  font-size: var(--font-size-sm);
+}
+
 select:focus,
 input[type="text"]:focus {
   border-color: var(--color-accent);
 }
-
 
 /* ================= SUMMARY CARDS ================= */
 
@@ -79,7 +80,6 @@ input[type="text"]:focus {
   color: var(--color-text-primary);
 }
 
-
 /* ================= TABS ================= */
 
 #report-tabs .tab {
@@ -102,7 +102,6 @@ input[type="text"]:focus {
   border-bottom-color: var(--color-primary);
 }
 
-
 /* ================= TABLE BASE ================= */
 
 table {
@@ -116,7 +115,6 @@ table {
 thead {
   background-color: var(--color-gray-100);
   position: sticky;
-  top: 0;
   z-index: var(--z-table-header);
 }
 
@@ -143,7 +141,6 @@ td.num {
   font-variant-numeric: tabular-nums;
 }
 
-
 /* ================= REPORT ROW TYPES ================= */
 
 tr.style-row {
@@ -154,7 +151,6 @@ tr.style-row {
 tr.sku-row td {
   padding-left: var(--space-xl);
 }
-
 
 /* ================= EMPTY STATE ================= */
 

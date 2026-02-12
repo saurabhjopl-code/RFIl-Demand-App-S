@@ -1,3 +1,5 @@
+import { AppState } from "../core/state.js";
+
 /* =========================================================
    BUCKET CLASSIFICATION
    ========================================================= */
@@ -7,6 +9,7 @@ export function calculateBucket() {
     const p = AppState.calculations.pendancyBySku[sku];
 
     let bucket = "LOW";
+
     if (p > 500) bucket = "URGENT";
     else if (p >= 100) bucket = "MEDIUM";
     else if (p < 0) bucket = "OVER_PRODUCTION";
@@ -14,6 +17,5 @@ export function calculateBucket() {
     AppState.calculations.bucketBySku[sku] = bucket;
   });
 
-  console.log("🪣 Buckets Assigned",
-    AppState.calculations.bucketBySku);
+  console.log("🪣 Buckets Assigned");
 }

@@ -1,14 +1,11 @@
-/* =========================================================
-   LOAD STYLE STATUS
-   Purpose: Style → Category & Company Remark mapping
-   ========================================================= */
+import { AppState } from "../core/state.js";
 
 export async function loadStyleStatus(url) {
   const res = await fetch(url);
   const text = await res.text();
 
   const rows = text.trim().split("\n");
-  rows.shift(); // remove header
+  rows.shift();
 
   const styleStatus = {};
 
@@ -29,9 +26,5 @@ export async function loadStyleStatus(url) {
 
   AppState.rawData.styleStatus = styleStatus;
 
-  console.log(
-    "🏷️ Style Status Loaded",
-    Object.keys(styleStatus).length,
-    styleStatus
-  );
+  console.log("🏷️ Style Status Loaded:", Object.keys(styleStatus).length);
 }

@@ -1,14 +1,11 @@
-/* =========================================================
-   LOAD SALES DATA
-   Purpose: Load & normalize sales rows
-   ========================================================= */
+import { AppState } from "../core/state.js";
 
 export async function loadSales(url) {
   const res = await fetch(url);
   const text = await res.text();
 
   const rows = text.trim().split("\n");
-  const headers = rows.shift().split(",");
+  rows.shift();
 
   AppState.rawData.sales = rows.map(r => {
     const cols = r.split(",");

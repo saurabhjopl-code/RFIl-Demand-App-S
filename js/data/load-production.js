@@ -1,7 +1,4 @@
-/* =========================================================
-   LOAD PRODUCTION DATA
-   Purpose: SKU-level production plan
-   ========================================================= */
+import { AppState } from "../core/state.js";
 
 export async function loadProduction(url) {
   const res = await fetch(url);

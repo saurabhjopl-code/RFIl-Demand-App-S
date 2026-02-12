@@ -1,3 +1,5 @@
+import { AppState } from "../core/state.js";
+
 /* =========================================================
    DIRECT DEMAND
    45 Days coverage
@@ -13,6 +15,5 @@ export function calculateDirectDemand() {
       Math.max(0, drr * 45 - sellerStock);
   });
 
-  console.log("🎯 Direct Demand Calculated",
-    AppState.calculations.directDemandBySku);
+  console.log("🎯 Direct Demand Calculated");
 }

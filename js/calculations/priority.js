@@ -1,3 +1,5 @@
+import { AppState } from "../core/state.js";
+
 /* =========================================================
    PRIORITY
    Only styles with sale > 300 units
@@ -13,10 +15,10 @@ export function calculatePriority() {
 
   Object.keys(styleSales).forEach(style => {
     if (styleSales[style] > 300) {
-      AppState.calculations.priorityByStyle[style] = "HIGH";
+      AppState.calculations.priorityByStyle[style] =
+        "HIGH";
     }
   });
 
-  console.log("🔥 Priority Styles",
-    AppState.calculations.priorityByStyle);
+  console.log("🔥 Priority Styles Calculated");
 }

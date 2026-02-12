@@ -1,3 +1,5 @@
+import { AppState } from "../core/state.js";
+
 /* =========================================================
    DRR CALCULATION
    DRR = Total Sale / Total Sale Days
@@ -14,8 +16,8 @@ export function calculateDRR() {
 
   Object.keys(salesBySku).forEach(sku => {
     AppState.calculations.drrBySku[sku] =
-      salesBySku[sku] / totalDays;
+      totalDays === 0 ? 0 : salesBySku[sku] / totalDays;
   });
 
-  console.log("📈 DRR Calculated", AppState.calculations.drrBySku);
+  console.log("📈 DRR Calculated");
 }

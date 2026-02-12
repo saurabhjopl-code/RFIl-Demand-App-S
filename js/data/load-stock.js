@@ -1,7 +1,4 @@
-/* =========================================================
-   LOAD STOCK DATA
-   Purpose: Separate Seller stock later
-   ========================================================= */
+import { AppState } from "../core/state.js";
 
 export async function loadStock(url) {
   const res = await fetch(url);

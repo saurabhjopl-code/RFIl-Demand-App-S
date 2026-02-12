@@ -2,15 +2,13 @@
    GLOBAL APPLICATION STATE
    ========================================================= */
 
-const AppState = {
+export const AppState = {
   rawData: {
     sales: [],
     stock: [],
     production: [],
     saleDays: [],
     totalSaleDays: 0,
-
-    /* ADDITIVE */
     styleStatus: {}
   },
 
@@ -37,6 +35,4 @@ const AppState = {
   }
 };
 
-window.AppState = AppState;
-
-console.log("✅ AppState initialized", AppState);
+console.log("✅ AppState initialized");

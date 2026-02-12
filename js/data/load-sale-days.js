@@ -1,7 +1,7 @@
+import { AppState } from "../core/state.js";
+
 /* =========================================================
    LOAD SALE DAYS
-   Purpose: Calculate TOTAL sale days from sheet
-   Status: LOCKED – No alternative source allowed
    ========================================================= */
 
 export async function loadSaleDays(url) {

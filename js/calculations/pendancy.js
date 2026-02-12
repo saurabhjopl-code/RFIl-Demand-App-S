@@ -1,3 +1,5 @@
+import { AppState } from "../core/state.js";
+
 /* =========================================================
    PENDANCY
    Direct Demand - Production
@@ -11,11 +13,13 @@ export function calculatePendancy() {
   });
 
   Object.keys(AppState.calculations.directDemandBySku).forEach(sku => {
-    const demand = AppState.calculations.directDemandBySku[sku];
+    const demand =
+      AppState.calculations.directDemandBySku[sku];
     const prod = prodMap[sku] || 0;
-    AppState.calculations.pendancyBySku[sku] = demand - prod;
+
+    AppState.calculations.pendancyBySku[sku] =
+      demand - prod;
   });
 
-  console.log("⏳ Pendancy Calculated",
-    AppState.calculations.pendancyBySku);
+  console.log("⏳ Pendancy Calculated");
 }

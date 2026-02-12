@@ -1,6 +1,4 @@
-/* =========================================================
-   APP INITIALIZATION
-   ========================================================= */
+import { AppState } from "./state.js";
 
 import { loadSaleDays } from "../data/load-sale-days.js";
 import { loadSales } from "../data/load-sales.js";
@@ -14,8 +12,6 @@ import { calculateDirectDemand } from "../calculations/direct-demand.js";
 import { calculatePendancy } from "../calculations/pendancy.js";
 import { calculateBucket } from "../calculations/bucket.js";
 import { calculatePriority } from "../calculations/priority.js";
-
-/* ================= CSV URLs ================= */
 
 const URLS = {
   sales:
@@ -33,8 +29,6 @@ const URLS = {
   styleStatus:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9UMGb9GMFpOrcTTV1yeN4VLudTFeVy97_09T7-SIyvXDsMFypBgqyZWVQitbJi0I5IenBb0skv9UQ/pub?gid=9418502&single=true&output=csv"
 };
-
-/* ================= BOOT ================= */
 
 async function bootApp() {
   console.log("🚀 App boot started");
